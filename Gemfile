@@ -57,3 +57,6 @@ end
 
 #debugger
 gem 'byebug', group: [:development, :test]
+
+#bcrypt
+gem 'bcrypt-ruby', '~> 3.1.2'
