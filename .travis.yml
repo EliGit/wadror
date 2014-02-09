@@ -11,5 +11,6 @@ deploy:
   api_key:
     secure: AoI/1+lGHV5qzI9W+qZsJBwFjEI0vYKmJI4A7r652/f5N4nDCexYySGJVE8aL7HALkKWR3Mm0EVyuV4CXadU1XGd2xajLztUnUWbvUPgNX28TcRuAJk8PjXpm2R944svatxVslcR4KFnzq1RoxmHU1ahc9gAjahWHTpkjNLbX1U=
   app: nameless-ravine-7534
+  run: "rake db:migrate"
   on:
     repo: EliGit/wadror
