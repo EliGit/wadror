@@ -1,6 +1,6 @@
 == README
 
-[![Build Status](https://travis-ci.org/mluukkai/ratebeer-public.png)](https://travis-ci.org/EliGit/wadror)
+[![Build Status](https://travis-ci.org/EliGit/wadror.png)](https://travis-ci.org/EliGit/wadror)
 
 
 This README would normally document whatever steps are necessary to get the
