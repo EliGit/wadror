@@ -66,7 +66,7 @@ class MembershipsController < ApplicationController
   # DELETE /memberships/1
   # DELETE /memberships/1.json
   def destroy
-    @membership.destroy
+    @membership.destroy if current_user.admin
     respond_to do |format|
       format.html { redirect_to memberships_url }
       format.json { head :no_content }

@@ -1,6 +1,9 @@
 class BeersController < ApplicationController
+  before_action :ensure_that_signed_in, except: [:index, :show]
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
   before_action :set_breweries_and_styles_for_template, only: [:new, :edit, :create]
+
+
 
 
   # GET /beers
@@ -57,7 +60,7 @@ class BeersController < ApplicationController
   # DELETE /beers/1
   # DELETE /beers/1.json
   def destroy
-    @beer.destroy
+    @beer.destroy if current_user.admin
     respond_to do |format|
       format.html { redirect_to beers_url }
       format.json { head :no_content }
