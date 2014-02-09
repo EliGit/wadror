@@ -12,6 +12,22 @@
   <% end %>
 </ul>
 
+<p>Favorite style:
+  <%if @user.favorite_style.nil?%>
+      No ratings
+  <%else%>
+      <%=@user.favorite_style %></p>
+  <%end%>
+
+
+
+<p>Favorite brewery:
+  <%if @user.favorite_brewery.nil?%>
+      No ratings
+  <%else%>
+      <%= @user.favorite_brewery.name%></p>
+  <%end%>
+
 <h2>Ratings: </h2>
 <ul>
   <% @user.ratings.each do |rating| %>
