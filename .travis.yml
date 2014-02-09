@@ -1,10 +1,15 @@
 language: ruby
-
 rvm:
- - 2.0.0
-
+- 2.0.0
 script:
- - bundle exec rake db:migrate --trace
- - RAILS_ENV=test bundle exec rake db:migrate --trace
- - bundle exec rake db:test:prepare
- - bundle exec rspec -fd spec/
+- bundle exec rake db:migrate --trace
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec -fd spec/
+deploy:
+  provider: heroku
+  api_key:
+    secure: AoI/1+lGHV5qzI9W+qZsJBwFjEI0vYKmJI4A7r652/f5N4nDCexYySGJVE8aL7HALkKWR3Mm0EVyuV4CXadU1XGd2xajLztUnUWbvUPgNX28TcRuAJk8PjXpm2R944svatxVslcR4KFnzq1RoxmHU1ahc9gAjahWHTpkjNLbX1U=
+  app: nameless-ravine-7534
+  on:
+    repo: EliGit/wadror
