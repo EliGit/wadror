@@ -63,9 +63,14 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'simplecov', require: false
 
+gem 'httparty'
+
+gem "rails-settings-cached", "0.3.1"
+
 group :test do
   gem 'rspec-rails', '~> 2.14.1'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'webmock'
 end

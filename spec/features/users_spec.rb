@@ -37,8 +37,8 @@ describe "User" do
     it "favorite style and brewery shown correctly" do
       brewery1 = FactoryGirl.create :brewery, name:"Koff"
       brewery2 = FactoryGirl.create :brewery, name:"Kaff"
-      beer1 = FactoryGirl.create :beer, name:"iso 3", brewery:brewery1, style: "Lager"
-      beer2 = FactoryGirl.create :beer, name:"Karhu", brewery:brewery2, style: "Weizen"
+      beer1 = FactoryGirl.create :beer, name:"iso 3", brewery:brewery1, style: FactoryGirl.create(:style, name: "Lager")
+      beer2 = FactoryGirl.create :beer, name:"Karhu", brewery:brewery2, style: FactoryGirl.create(:style)
 
       FactoryGirl.create :rating, score: 10, user: User.first, beer: beer1
       FactoryGirl.create :rating, score: 15, user: User.first, beer: beer2

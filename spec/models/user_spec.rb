@@ -89,10 +89,11 @@ describe "favorite style" do
   end
 
   it "is the one with highest rating if several rated" do
-    create_beers_with_ratings_and_style(10, 20, 15, 7, 9, user, "Lager")
-    create_beers_with_ratings_and_style(10, 20, 15, 7, 10, user, "Weizen")
+    best = FactoryGirl.create(:style)
+    create_beers_with_ratings_and_style(10, 20, 15, 7, 9, user, FactoryGirl.create(:style, name: "Lager"))
+    create_beers_with_ratings_and_style(10, 20, 15, 7, 10, user, best)
 
-    expect(user.favorite_style).to eq("Weizen")
+    expect(user.favorite_style).to eq(best)
   end
 end
 
@@ -114,8 +115,8 @@ describe "favorite brewery" do
   end
 
   it "is the one with highest average rating if several rated" do
-    create_beers_with_ratings_and_style(10, 20, 15, 7, 9, user, "Lager")
-    create_beers_with_ratings_and_style(10, 20, 15, 7, 10, user, "Weizen")
+    create_beers_with_ratings_and_style(10, 20, 15, 7, 9, user, FactoryGirl.create(:style, name: "Lager"))
+    create_beers_with_ratings_and_style(10, 20, 15, 7, 10, user, FactoryGirl.create(:style))
 
     best = FactoryGirl.create(:brewery, name: "bestTest")
     FactoryGirl.create(:beer, brewery: best)
