@@ -47,7 +47,7 @@
       <file leaf-file-name="20140216154018_add_style_to_beer.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/migrate/20140216154018_add_style_to_beer.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="64" selection-start="168" selection-end="168" vertical-scroll-proportion="0.072463766" vertical-offset="0" max-vertical-offset="828">
+            <state line="2" column="42" selection-start="102" selection-end="102" vertical-scroll-proportion="0.036231883" vertical-offset="0" max-vertical-offset="828">
               <folding />
             </state>
           </provider>
@@ -983,7 +983,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140216154018_add_style_to_beer.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="64" selection-start="168" selection-end="168" vertical-scroll-proportion="0.072463766" vertical-offset="0" max-vertical-offset="828">
+        <state line="2" column="42" selection-start="102" selection-end="102" vertical-scroll-proportion="0.036231883" vertical-offset="0" max-vertical-offset="828">
           <folding />
         </state>
       </provider>
