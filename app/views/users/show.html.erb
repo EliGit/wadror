@@ -28,23 +28,34 @@
       <%= @user.favorite_brewery.name%></p>
   <%end%>
 
-<h2>Ratings: </h2>
-<ul>
-  <% @user.ratings.each do |rating| %>
-      <li>
-        <%= rating %>
-        <% if @user == current_user %>
-            <%= link_to 'delete', rating, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-      </li>
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Ratings</th>
+      <% if @user == current_user %>
+        <th>Delete</th>
+      <% end %>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @user.ratings.each do |rating| %>
+        <tr>
+          <td><%= rating %></td>
+          <% if @user == current_user %>
+            <td><%= link_to 'delete', rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+
+<% unless current_user.nil? %>
+  <% if @user == current_user || current_user.admin %>
+    <%= link_to 'Destroy', @user, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
-</ul>
-
-
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<% if @user == current_user %>
-    <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <% end %>
-<%= link_to 'Back', users_path %>

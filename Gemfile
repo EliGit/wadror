@@ -67,6 +67,18 @@ gem 'httparty'
 
 gem "rails-settings-cached", "0.3.1"
 
+gem 'jquery-turbolinks'
+
+gem 'selenium-webdriver'
+
+gem 'database_cleaner', '< 1.1.0'
+
+gem 'bootstrap-sass'
+group :development do
+  gem 'rails_layout'
+end
+
+
 group :test do
   gem 'rspec-rails', '~> 2.14.1'
   gem 'factory_girl_rails'

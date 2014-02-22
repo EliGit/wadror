@@ -8,7 +8,14 @@ class BreweriesController < ApplicationController
   # GET /breweries.json
   def index
     @breweries = Brewery.all
-    #render :index  renderöi hakemistossa view/breweries olevan näkymätemplaten index.html.erb
+
+    order = params[:order] || 'name'
+
+    case order
+      when 'name' then @breweries.sort_by!{ |b| b.name }
+      when 'year' then @breweries.sort_by!{ |b| b.year }
+    end
+
   end
 
   # GET /breweries/1
@@ -64,6 +71,9 @@ class BreweriesController < ApplicationController
       format.html { redirect_to breweries_url }
       format.json { head :no_content }
     end
+  end
+
+  def list
   end
 
   private
