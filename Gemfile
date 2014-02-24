@@ -73,6 +73,8 @@ gem 'selenium-webdriver'
 
 gem 'database_cleaner', '< 1.1.0'
 
+gem 'rack-mini-profiler'
+
 gem 'bootstrap-sass'
 group :development do
   gem 'rails_layout'

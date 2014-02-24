@@ -21,11 +21,4 @@
 </p>
 
 
-<%= link_to 'Edit', edit_style_path(@style), class:"btn btn-primary" %>
-
-
-<% unless current_user.nil? %>
-    <%if current_user.admin%>
-        <%= link_to 'Destroy', @beer_club, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%end%>
-<%end%>
+<%= edit_and_destroy_buttons(@style) %>

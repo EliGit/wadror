@@ -3,6 +3,9 @@
 <p>
   <h2>
     <%= @brewery.name %>
+    <% if not @brewery.active  %>
+        <span class="label label-info">retired</span>
+    <% end %>
   </h2>
 </p>
 
@@ -27,15 +30,8 @@
   <% if @brewery.ratings.empty? %>
       Brewery's beers have no ratings!
   <% else%>
-      Has <%=@brewery.ratings.count%> <%="rating".pluralize(@brewery.ratings.count)%>, average: <%= @brewery.average_rating%>
+      Has <%=@brewery.ratings.count%> <%="rating".pluralize(@brewery.ratings.count)%>, average: <%= round @brewery.average_rating%>
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_brewery_path(@brewery), class:"btn btn-primary" if current_user%>
-
-
-<% unless current_user.nil? %>
-    <%if current_user.admin%>
-    <%= link_to 'Destroy', @brewery, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%end%>
-<%end%>
+<%= edit_and_destroy_buttons(@brewery) %>
